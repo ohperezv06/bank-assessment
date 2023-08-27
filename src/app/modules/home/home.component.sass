@@ -1,0 +1,39 @@
+.home-container
+  padding: 0 60px
+
+  .searchbar-container
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 8px
+
+  .products-container
+    background-color: #ffffff
+    padding: 16px 16px 20px
+    border-radius: 4px
+
+    &-table
+      width: 100%
+      border-collapse: collapse
+
+      thead
+        background-color: #f9fafc
+        height: 40px
+        text-align: left
+        tr
+          border-bottom: 1px solid #ecebf1
+          th:first-child
+            width: 10%
+            text-align: center
+
+      tbody
+        tr
+          height: 40px
+          border-bottom: 1px solid #ecebf1
+          td:first-child
+            text-align: center
+    &-summary
+      display: flex
+      justify-content: space-between
+

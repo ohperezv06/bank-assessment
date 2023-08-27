@@ -1,0 +1,45 @@
+<div class="home-container">
+  <form [formGroup]=formHome>
+    <div class="searchbar-container">
+      <input type="text" formControlName="searchTerm">
+      <button class="btn btn-primary">
+        Agregar
+      </button>
+    </div>
+  </form>
+  <span>{{ searchTerm.value }}</span>
+  <div class="products-container">
+      <table class="products-container-table">
+        <thead>
+        <tr>
+          <th>Logo</th>
+          <th>Nombre del producto</th>
+          <th>Descripcion</th>
+          <th>Fecha de liberacion</th>
+          <th>Fecha de reestructuracion</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products | filter: searchTerm.value: 'name'">
+          <td>{{product.logo}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.date_release | date}}</td>
+          <td>{{product.date_revision | date}}</td>
+          <td>...</td>
+        </tr>
+        </tbody>
+      </table>
+    <div class="separator-line"></div>
+    <div class="products-container-summary">
+      <span>{{products.length}} resultados</span>
+      <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </div>
+  </div>
+</div>
